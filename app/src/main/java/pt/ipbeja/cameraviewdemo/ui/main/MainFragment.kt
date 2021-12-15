@@ -1,15 +1,15 @@
 package pt.ipbeja.cameraviewdemo.ui.main
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import pt.ipbeja.cameraviewdemo.R
 import pt.ipbeja.cameraviewdemo.databinding.MainFragmentBinding
 import java.io.File
+
+
 
 class MainFragment : Fragment() {
 
@@ -31,14 +31,16 @@ class MainFragment : Fragment() {
             findNavController().navigate(MainFragmentDirections.actionMainFragmentToCameraFragment())
         }
 
-        // TODO load saved files and feed adapter
-        binding.grid.adapter = adapter
 
+        val allFiles = requireContext().filesDir?.listFiles()?.toList() ?: listOf()
+        adapter.data = allFiles
+        binding.grid.adapter = adapter
     }
 
 
     private fun onImageClicked(file: File) {
-        // TODO launch ImageFragment
+        findNavController()
+            .navigate(MainFragmentDirections.actionMainFragmentToImageFragment(file))
     }
 }
 

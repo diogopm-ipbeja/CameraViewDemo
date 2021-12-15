@@ -10,6 +10,8 @@ import pt.ipbeja.cameraviewdemo.R
 import pt.ipbeja.cameraviewdemo.databinding.ImageGridItemBinding
 import java.io.File
 
+
+
 class ImageAdapter(private val onItemClicked: (File) -> Unit) : RecyclerView.Adapter<ImageViewHolder>() {
 
     var data: List<File> = listOf()
@@ -46,6 +48,7 @@ class ImageViewHolder(view: View, onItemClicked: (File) -> Unit) : RecyclerView.
 
     fun bind(file: File) {
         this.file = file
-        // TODO load image
+        binding.image.load(file)
     }
+
 }

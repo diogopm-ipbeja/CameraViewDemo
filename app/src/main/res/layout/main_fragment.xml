@@ -16,8 +16,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:listitem="@layout/image_grid_item"
         app:spanCount="3"
+        tools:listitem="@layout/image_grid_item"
         />
 
 

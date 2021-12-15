@@ -39,7 +39,7 @@ dependencies {
     api 'com.otaliastudios:cameraview:2.7.2'
 
     // Image loading
-    implementation "io.coil-kt:coil:1.4.0"
+    implementation "io.coil-kt:coil:1.4.0" // alternative: Glide
 
     implementation 'androidx.navigation:navigation-fragment-ktx:2.4.0-beta02'
     implementation 'androidx.navigation:navigation-ui-ktx:2.4.0-beta02'
